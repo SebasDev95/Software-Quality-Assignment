@@ -88,10 +88,10 @@ class ValidateUsers(User, Encryption):
         return input
 
 
-user = ValidateUsers('Pootato', 'P00t-@to!-12', 0)
+user = ValidateUsers('Pootato@!@#@', 'P00t-@to!-12', 0)
 print('\n' + '-' * 30 + '\n')
 print(user.encrypt(user.username) + '\n' + user.encrypt(user.password))
 print('\n' + '-' * 30 + '\n')
-print(user.decrypt('Tssxexs') + '\n' + user.decrypt('T00x-@xs!-12'))
+print(user.decrypt(user.encrypt(user.username)) + '\n' + user.decrypt(user.encrypt(user.password)))
 print('\n' + '-' * 30 + '\n')
 print(user.credentials())
